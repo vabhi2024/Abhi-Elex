@@ -37,8 +37,9 @@
   <link rel="stylesheet" href="style.css">
   </head>
 <body>
+<canvas id="fireworks"></canvas>
   
-   <!-- Header -->
+  <!-- Header -->
     <header>
       <div class="logo">🜲 DEV ABHI<i class="fa fa-check-circle" style="color:white; font-size:15px; position:fixed; top:13px; margin:8px;"></i></div>
         <nav>
@@ -62,18 +63,16 @@
 
   <div class="top" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
   <!-- Profile Image -->
-  <img src="profile.jpg" alt="Abhishek Kumar" 
-       style="width:120px; height:120px; border-radius:50%; border:3px solid white; object-fit:cover; margin-bottom:1rem;">
-
-  <h1>Abhishek Kumar</h1>
+  <img class="profile" src="profile.jpg" alt="Abhishek Kumar">
+       
+  <h1 style="color:darkseagreen">Abhishek Kumar</h1>
   <p>Modern Consumer Electronics Engineer</p>
    <p>─── MCEA | B.Tech ───</p>
     </div>
   
   <section>
     <h2>─── About Me ───</h2>
-    <p style="text-align:center; max-width:800px; margin:auto; background:wheat; padding:20px; border-radius:15px;">
-      Hi, I’m <b>Abhishek Kumar</b>, a passionate Electronics Engineer with expertise in 
+    <p class="about"> Hi, I’m <b>Abhishek Kumar</b>, a passionate Electronics Engineer with expertise in 
       <b>circuit design, maintenance, embedded systems, and software integration</b>. 
       I build innovative and scalable electronics projects with modern technologies.
     </p>
@@ -82,14 +81,14 @@
   <section>
     <h2>─── My Skills ───</h2>
   <div class="skills" id="skillGrid">
-  <div class="skill-card" data-title="Circuit Design & Maintenance" data-desc="Circuit design & maintenance involves planning, analyzing, constructing, and troubleshooting circuits for reliability and efficiency.">Circuit Design & Maintenance</div>
-  <div class="skill-card" data-title="PCB Design & Development" data-desc="PCB design organizes components into compact layouts. Tasks include schematic capture, routing, soldering, testing, and multi-layer designs.">PCB Design & Development</div>
-  <div class="skill-card" data-title="Microcontrollers & Microprocessors" data-desc="MCUs and MPUs are brains of devices. MCUs handle embedded tasks, MPUs manage complex computing, enabling IoT and automation.">Microcontrollers & Microprocessors</div>
-  <div class="skill-card" data-title="Embedded Systems" data-desc="Embedded systems integrate hardware & software to perform dedicated tasks, used in IoT, automation, and robotics.">Embedded Systems</div>
-  <div class="skill-card" data-title="IoT & Automation" data-desc="IoT connects devices for monitoring & control. Automation uses technology to perform tasks with minimal human intervention.">IoT & Automation</div>
-  <div class="skill-card" data-title="Python Programming" data-desc="Python is used for scripting, automation, data analysis, and controlling embedded systems with libraries like MicroPython.">Python Programming</div>
-  <div class="skill-card" data-title="C++ Programming" data-desc="C++ is used for high-performance embedded software, robotics, and electronics device programming.">C++ Programming</div>
-  <div class="skill-card" data-title="Electronics Software" data-desc="Developing software solutions for electronics projects, including simulations, dashboards, and PWA apps.">Electronics Software</div>
+  <div class="skill-card" data-title="𖥔 Circuit Design & Maintenance" data-desc="Circuit design & maintenance involves planning, analyzing, constructing, and troubleshooting circuits for reliability and efficiency.">Circuit Design & Maintenance</div>
+  <div class="skill-card" data-title="𖥔 PCB Design & Development" data-desc="PCB design organizes components into compact layouts. Tasks include schematic capture, routing, soldering, testing, and multi-layer designs.">PCB Design & Development</div>
+  <div class="skill-card" data-title="𖥔 Microcontrollers & Microprocessors" data-desc="MCUs and MPUs are brains of devices. MCUs handle embedded tasks, MPUs manage complex computing, enabling IoT and automation.">Microcontrollers & Microprocessors</div>
+  <div class="skill-card" data-title="𖥔 Embedded Systems" data-desc="Embedded systems integrate hardware & software to perform dedicated tasks, used in IoT, automation, and robotics.">Embedded Systems</div>
+  <div class="skill-card" data-title="𖥔 IoT & Automation" data-desc="IoT connects devices for monitoring & control. Automation uses technology to perform tasks with minimal human intervention.">IoT & Automation</div>
+  <div class="skill-card" data-title="𖥔 Python Programming" data-desc="Python is used for scripting, automation, data analysis, and controlling embedded systems with libraries like MicroPython.">Python Programming</div>
+  <div class="skill-card" data-title="𖥔 C++ Programming" data-desc="C++ is used for high-performance embedded software, robotics, and electronics device programming.">C++ Programming</div>
+  <div class="skill-card" data-title="𖥔 Electronics Software" data-desc="Developing software solutions for electronics projects, including simulations, dashboards, and PWA apps.">Electronics Software</div>
 </div>
   </section>
   
@@ -105,15 +104,16 @@
 
   <style>
   .modal {
-    display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7);
+    display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9);
     justify-content:center; align-items:center; z-index:1000;
   }
   .modal-content {
-    background:white; padding:2rem; border-radius:12px; max-width:700px; width:90%; position:relative; box-shadow:0 0 2px red, 0 0 6px orange;
+    background:none; padding:2rem; border-radius:12px; max-width:700px; width:90%; position:relative; box-shadow:0 0 2px red, 0 0 6px orange;
   }
-  .close-modal { position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:#333; }
+  .close-modal { position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:#999; }
 
-  h3 { color:#2575fc; margin-top:0; }
+  h3 { color:#007bff; margin-top:0; }
+  p {  color:#999; } 
 </style>
   
 <script>
@@ -150,37 +150,37 @@
     <h2>─── My Projects ───</h2>
     <div class="projects">
       <div class="project-card">
-        <h3>⚡ Smart Home Automation</h3>
+        <h3>𖥔 Smart Home Automation</h3>
         <p>IoT-based system to control lights, fans, and appliances using a mobile dashboard.</p>
         <a href="https://www.slideshare.net/slideshow/project-report-on-home-automation-using-arduino/82117880">View Project</a>
       </div>
       
       <div class="project-card">
-      <h3>🔋 Hybrid Inverter</h3>
+      <h3>𖥔 Hybrid Inverter</h3>
      <p>Efficiently integrates solar and grid power, stores energy in batteries, and ensures uninterrupted supply.</p>
       <a href="https://www.slideshare.net/slideshow/hybrid-solar-inverter-81305821/81305821" target="_blank">View Project</a>
     </div>
       
       <div class="project-card">
-        <h3>🔋 Solar Power Monitoring</h3>
+        <h3>𖥔 Solar Power Monitoring</h3>
         <p>Embedded system with sensors to monitor and display solar energy performance in real-time.</p>
         <a href="https://www.slideshare.net/slideshow/a-study-of-iot-based-realtime-solar-power-remote-monitoring-system/249894736">View Project</a>
       </div>
       
       <div class="project-card">
-  <h3>🌐 Mobile Networks</h3>
+  <h3>𖥔 Mobile Networks</h3>
   <p>Implemented techniques to improve network performance and internet speed for devices and embedded systems.</p>
   <a href="https://www.slideshare.net/slideshow/mobile-network-structure/67776844" target="_blank">View Project</a>
 </div>
       
       <div class="project-card">
-        <h3>📡 IoT Weather Station</h3>
+        <h3>𖥔 IoT Weather Station</h3>
         <p>Weather monitoring system using sensors (temperature, humidity, air quality) with web dashboard.</p>
         <a href="https://www.slideshare.net/slideshow/weather-station-using-iot-143811611/143811611">View Project</a>
       </div>
       
       <div class="project-card">
-      <h3>💻 C++ Programming</h3>
+      <h3>𖥔 C++ Programming</h3>
       <p>Developed efficient algorithms and embedded solutions for electronics projects using C++.</p>
       <a href="https://www.google.com/search?q=c+language+for+electronics&sca_esv=d844d2feba1985a5&udm=50&fbs=AIIjpHz30rPMyW-0vSP0k1VTNmO_kCOARpjPjQRkBWH2HwUIz5XUSIJvSK0oms7XOxizDlnr_4ZY5sR6MhoHu3TFlth2qMOftPBOfVroSe_7AukzmMQfsPZYL6FrHDLo2AhS-2LIqHF9CPRyHcT9Cttw7PIuOLRBWbtaGzuDI2i89Rv-0oSQ5zEHZ7vgB6lbhg4kInbOs1NX1bOzoEEkh10gi_aik0AJ18D-e8d0bvXOKgIUl55VvAI&aep=1&ntc=1&sa=X&ved=2ahUKEwi8tPjlooyQAxUH4ckDHWgiBewQ2J8OegQIDxAE&mstk=AUtExfDfnSwgmKjCFwn2fxzTVYYKjiEDcoS6OB8j20GJrahIfbBQoVHiKQH5iHe9Ef7I6JlV9wP938f7JW5daBodVphX2Bd2prSGFh3V8RmJBCROj3Ms1r_shdI3AoG0u-0Ce2vXtT7YFaHGl3AluIlsCpbXgCzLmeL190M&csuir=1" target="_blank">View Project</a>
     </div>
@@ -229,6 +229,7 @@
     <div class="slide github"><a href="https://github.com" target="_blank"><i class="fab fa-github"></i><span>Github</span></a></div>
     <div class="slide youtube"><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></div>
     <div class="slide email"><a href="mailto:someone@example.com"><i class="fa fa-envelope"></i><span>Email</span></a></div>
+    <div class="slide upi"><a href="upi://pay?pa=example@upi&pn=YourName" target="_blank"><i class="fab fa-cc-apple-pay"></i><span>UPI Payments</span></a></div>
     <div class="slide telegram"><a href="https://t.me/yourusername" target="_blank"><i class="fab fa-telegram"></i><span>Telegram</span></a></div>
     <div class="slide whatsapp"><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a></div>
     </div>
@@ -259,6 +260,7 @@
   </footer>
 
   <script src="nav.js"></script>
+  <script src="fareworks.js"></script>
   <script src="typewriter.js"></script>
 </body>
 </html>
