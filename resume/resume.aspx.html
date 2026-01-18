@@ -3,117 +3,305 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">   
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">   
 <title>Abhishek Kumar - Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-body{background:#f2f7fb;color:#222;}
-header{background:#005dea;color:#fff;padding:30px;text-align:center;}
-header img{width:130px;height:130px;border-radius:50%;border:4px solid #fff;}
-.container{width:90%;max-width:900px;margin:20px auto;}
-h2{margin:20px 0 10px;color:#005dea;border-left:5px solid #005dea;padding-left:10px;}
-table{width:100%;border-collapse:collapse;margin-top:10px;}
-table,th,td{border:1px solid #ccc;}
-th,td{padding:10px;}
-ul{padding-left:20px;}
-footer{background:#005dea;color:#fff;text-align:center;padding:15px;margin-top:30px;}
-footer a{color:#fff;text-decoration:none;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+body{
+    background:#f2f7fb;
+    color:#222;
+    line-height:1.6;
+    width: 100%;
+}
+header{
+    background:#005dea;
+    color:#fff;
+    padding:30px;
+    text-align:center;
+}
+header img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #fff;
+    margin-bottom:10px;
+}
+.container{
+    width:90%;
+    max-width:900px;
+    margin:20px auto;
+}
+h2{
+    margin:20px 0 10px;
+    color:#005dea;
+    border-left:5px solid #005dea;
+    padding-left:10px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+    font-size: 15px;
+}
+table, th, td{
+    border:1px solid #ccc;
+}
+th, td{
+    padding:10px;
+    text-align:left;
+}
+ul{
+    margin-top:10px;
+    padding-left:20px;
+}
+footer {
+    background:#005dea;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+footer a {
+    color:#fff;        
+    text-decoration: none;
+}
+table tr:hover {
+    background:#e7f0ff;
+    transform:scale(1.02);
+    transition:0.3s;
+}
+
+/* Header glow animation */
+header{animation:glow 3s infinite alternate ease-in-out;}
+@keyframes glow{
+    from{box-shadow:0 0 0px #005dea;}
+    to{box-shadow:0 0 25px #005dea;}
+}
+
+/* Animatic Floating Effect */
+.animatic{
+    animation:floating 3s ease-in-out infinite;
+}
+@keyframes floating{
+    0%{transform:translateY(0);} 
+    50%{transform:translateY(-10px);} 
+    100%{transform:translateY(0);} 
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+    animation: pop 0.3s ease;
+}
+@keyframes pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 6px;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    text-align: center;
+}
+button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background: #1e88e5;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.close-btn {
+    background: #e53935;
+}
+#error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<img src="profile.png">
-<h1>Abhishek Kumar</h1>
-<p>📞 +91 7054033320</p>
-<p>✉️ abhi33320k@gmail.com</p>
-<p>🌐 www.abhielx.netlify.app</p>
-<p>📍 Barabanki, Uttar Pradesh, India – 225412</p>
+<header class="animatic">
+    <img src="profile.png" alt="Profile Photo">
+    <h1>Abhishek Kumar</h1>
+    <p>Mobile: +91 7054033320 <br>Email: abhi33320k@gmail.com</p>
+    <p>Website: www.abhielx.netlify.app</p>
+    <p>Address: Barabanki Uttar Pradesh India 225412</p>
 </header>
 
-<div class="container">
+<div class="container slide-in">
 
-<h2>Career Objective</h2>
-<p>
-To work in a dynamic organization where I can apply my knowledge of Hardware and Software,
+<h2 class="reveal">Career Objective</h2>
+<p class="reveal">
+To work in a dynamic organization where I can apply my knowledge of Hardware and Software
 contribute to innovative technical solutions while continuing to grow professionally.
 </p>
 
-<h2>Educational Qualification</h2>
+<h2 class="reveal">Educational Qualification</h2>
 <table>
-<tr>
-<th>Course</th>
-<th>Institute</th>
-<th>Year</th>
-<th>Percentage</th>
+<tr class="reveal">
+    <th>Course</th>
+    <th>Institute</th>
+    <th>Year</th>
+    <th>Percentage</th>
 </tr>
-<tr>
-<td>MCEA Diploma</td>
-<td>BTEUP</td>
-<td>2023 – 2026</td>
-<td>Appearing</td>
+<tr class="reveal">
+    <td>MCEA Diploma</td>
+    <td>BTEUP</td>
+    <td>2023–2026</td>
+    <td>Appearing</td>
 </tr>
-<tr>
-<td>Intermediate</td>
-<td>UP Board</td>
-<td>2023</td>
-<td>65%</td>
+<tr class="reveal">
+    <td>Intermediate</td>
+    <td>UP board</td>
+    <td>2023</td>
+    <td>65%</td>
 </tr>
-<tr>
-<td>Highschool</td>
-<td>UP Board</td>
-<td>2021</td>
-<td>75%</td>
+<tr class="reveal">
+    <td>Highschool</td>
+    <td>UP board</td>
+    <td>2021</td>
+    <td>75%</td>
 </tr>
 </table>
 
-<h2>Technical Skills</h2>
-<ul>
-<li>Circuit Design and Assembling</li>
-<li>Circuit Analysis and Troubleshooting</li>
-<li>Soldering, Testing and Maintenance</li>
-<li>Embedded System and Internet of Things (IoT)</li>
-<li>Mobile-app controlled devices (basic idea)</li>
-<li>Basic technical understanding and Problem-solving ability</li>
+<h2 class="reveal">Technical Skills</h2>
+<ul class="reveal">
+    <li>Circuit Design and Assembling</li>
+    <li>Circuit Analysis and Troubleshooting</li>
+    <li>Soldering ,Testing and Maintenance</li>
+    <li>Embedded System and Internet of Things (IoT)</li>
+    <li>Mobile-app controlled devices (basic idea)</li>
+    <li>Basic technical understanding and Problem-solving ability</li>
 </ul>
 
-<h2>Other Skills</h2>
-<ul>
-<li>Website Design and Development</li>
-<li>Site Debugging and Update</li>
-<li>Cloud Computing and Data Management</li>
-<li>Accounting (Tally)</li>
-<li>Microsoft Excel</li>
-<li>Adobe Photoshop</li>
-<li>Internet</li>
+<h2 class="reveal">Other Skills</h2>
+<ul class="reveal">
+    <li>Website Design and Development</li>
+    <li>Site Debugging and updation</li>
+    <li>Cloud Computing and Data management</li>
+    <li>Accounting (Tally)</li>
+    <li>Microsoft Excel</li>
+    <li>Adobe Photoshop</li>
+    <li>Internet</li>
 </ul>
 
-<h2>Experience</h2>
-<p>
-<strong>45 Days Industrial Training</strong><br>
-Mecatredz Technology Pvt. Ltd., Lucknow<br>
-Training based on Embedded System and Internet of Things (IoT)
+<h2 class="reveal">Experience</h2>
+<p class="reveal">
+45day's Industrial Training at Mecatredz Technology Pvt. Ltd., Lucknow<br>
+Tranning based on Embedded System and Internet of Things (IoT).
 </p>
 
-<h2>Language</h2>
-<ul>
-<li>Hindi</li>
-<li>English</li>
+<h2 class="reveal">Language</h2>
+<ul class="reveal">
+    <li>Hindi</li>
+    <li>English</li>
 </ul>
 
-<h2>Hobbies</h2>
-<ul>
-<li>Listening Music</li>
-<li>Reading</li>
+<h2 class="reveal">Hobbies</h2>
+<ul class="reveal">
+    <li>Listening Music</li>
+    <li>Reading</li>
 </ul>
 
 </div>
 
-<footer>
-<a href="http://abhielx.netlify.app/resume.pdf" target="_blank">Download Resume</a>
+<footer class="reveal">
+<a href="#" onclick="openPopup()">Download Resume</a>
 </footer>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+<div class="popup-content">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuPDVLI7a1wWqlmammyDIrswg7fkJmmnuFMG2S2pZ5mQ&s" height="100px">
+<h3>🔐 Protected File</h3>
+<input type="password" id="password" placeholder="Enter password">
+<main>
+<button onclick="closePopup()" class="close-btn">Close</button>
+<button onclick="checkPassword()">Download</button>
+</main>
+<p id="error"></p>
+</div>
+</div>
+
+<script>
+function openPopup() {
+  document.getElementById('popup').style.display = 'flex';
+}
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+  document.getElementById('error').innerHTML = "";
+}
+function checkPassword() {
+  let pass = document.getElementById("password").value;
+  if (pass === "1234") {
+    window.location.href = "http://abhielx.netlify.app/resume.pdf";
+  } else {
+    document.getElementById("error").innerHTML = "❌ Wrong Password!";
+  }
+}
+</script>
+
+<script>
+function revealOnScroll() {
+  let reveals = document.querySelectorAll(".reveal");
+  reveals.forEach((el) => {
+    let windowHeight = window.innerHeight;
+    let elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 50) {
+      el.classList.add("active");
+    } else {
+      el.classList.remove("active");
+    }
+  });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
 
 </body>
 </html>
